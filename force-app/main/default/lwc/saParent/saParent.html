@@ -1,0 +1,46 @@
+<template>
+   
+    <lightning-card icon-name="standard:groups" title="Sales Agent Details">
+        <div class="slds-card__body slds-card__body_inner">
+
+            <div class="slds-var-m-around_medium">
+                <lightning-input
+                    type="search"
+                    onchange={handleKeyChange}
+                    class="slds-var-m-bottom_small"
+                    label=""
+                    placeholder="Search for Sales Agents"
+                ></lightning-input>
+            </div>
+
+        <template if:false={sainfos2}>
+            <lightning-layout multiple-rows="true" pull-to-boundary="small">
+                
+                            <template for:each={sainfos.data} for:item="w">
+                                                
+                                <lightning-layout-item key={w.Id} size="3" class="slds-var-p-around_xx-small">
+                                    <c-sa-child sainfo = {w} onsadetailview={handlesaDetailView}> </c-sa-child>
+                                </lightning-layout-item>
+                                       
+                            </template>
+                        </lightning-layout>
+        </template>    
+
+        <template if:true={sainfos2}>
+            <lightning-layout multiple-rows="true" pull-to-boundary="small">
+                
+                            <template for:each={sainfos2} for:item="w">
+                                                
+                                <lightning-layout-item key={w.Id} size="3" class="slds-var-p-around_xx-small">
+                                    <c-sa-child sainfo = {w} onsadetailview={handlesaDetailView}> </c-sa-child>
+                                </lightning-layout-item>
+                                       
+                            </template>
+                        </lightning-layout>
+        </template> 
+       
+            
+    </div>
+    </lightning-card>
+   
+</template>

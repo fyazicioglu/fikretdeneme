@@ -1,0 +1,11 @@
+:host {
+    --sds-c-card-color-background:white;
+}
+.sa-tile {
+	display: block;
+	border: 1px solid #9b9b9c;
+	border-radius: .20rem;
+	background-color: rgb(246, 27, 27);
+	font-family: sans-serif;
+	
+}
